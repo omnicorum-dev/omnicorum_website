@@ -1,0 +1,146 @@
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  color: #00ff00;
+  background:
+    repeating-linear-gradient(0deg, #060606 0, #060606 2px, #000 2px, #000 4px);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(90deg, transparent 0 22%, rgba(255, 0, 0, 0.08) 22.4%, transparent 23%),
+    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.08), transparent 18%),
+    radial-gradient(circle at 10% 88%, rgba(0, 255, 0, 0.07), transparent 22%);
+}
+
+a {
+  color: #ffff00;
+}
+
+a:visited {
+  color: #ff00ff;
+}
+
+h1 {
+  margin: 0;
+  color: #ff0000;
+  font-size: 36px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+marquee {
+  color: #000;
+  background: #ffff00;
+  border: 3px ridge #ff0000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.main-table {
+  width: 760px;
+  max-width: calc(100% - 16px);
+  margin-top: 24px;
+  background: #111;
+  border: 8px ridge #555;
+}
+
+.file-table {
+  margin-bottom: 40px;
+}
+
+.top-cell {
+  color: #00ffff;
+  background: #000080;
+  border: 2px outset #999;
+}
+
+.link-box {
+  color: #fff;
+  background: #300;
+  border: 3px inset #999;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.guess-box {
+  color: #000;
+  background: #c0c0c0;
+  border: 3px inset #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.small,
+.footer {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+}
+
+.footer {
+  color: #777;
+}
+
+input[type="text"] {
+  color: #00ff00;
+  background: #000;
+  border: 2px inset #888;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  color: #000;
+  background: #c0c0c0;
+  border: 3px outset #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.bad-media {
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  border: 6px groove #777;
+  background: #000;
+}
+
+audio {
+  width: 90%;
+  max-width: 560px;
+}
+
+.text-frame {
+  width: 95%;
+  height: 320px;
+  color: #00ff00;
+  background: #000;
+  border: 4px inset #777;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .main-table {
+    margin-top: 8px;
+  }
+
+  input[type="text"] {
+    width: 92%;
+  }
+}

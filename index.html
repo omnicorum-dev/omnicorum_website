@@ -1,18 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Omnicorum</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<canvas id="fireCanvas"></canvas>
-
-<div class="center-image">
-  <img src="logo_white.png" alt="Centered Image">
-</div>
-
-<script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>THE END OF AN ERA</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <center>
+      <table class="main-table" cellpadding="8" cellspacing="3">
+        <tr>
+          <td class="top-cell">
+            <h1>E.I.M. ARCHIVAL SERVICES</h1>
+            <p class="small">archival materials recovered from index 00</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <marquee scrollamount="3">THIS PAGE IS PRIVATE // DO NOT TRUST CLEAN COPIES // THIS PAGE IS PRIVATE</marquee>
+          </td>
+        </tr>
+        <tr>
+          <td class="link-box">
+            <p><b>FILES:</b></p>
+            <p><a href="heard.html">heard</a></p>
+            <p><a href="read.html">read</a></p>
+            <p><a href="saw.html">saw</a></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="guess-box">
+            <form id="guess-form">
+              <p><b>FINAL ANSWER:</b></p>
+              <input id="final-guess" name="final-guess" type="text" size="32">
+              <input type="submit" value="submit">
+            </form>
+            <p id="guess-status" class="small">nothing has been sent.</p>
+          </td>
+        </tr>
+      </table>
+      <p class="footer">last updated: never / best viewed on a dying monitor</p>
+    </center>
+    <script src="script.js"></script>
+  </body>
 </html>
