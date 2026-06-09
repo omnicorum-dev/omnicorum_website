@@ -10,7 +10,7 @@ if (form && input && statusLine) {
 
     const guess = input.value.trim().toLowerCase().replace(/[.!?]+$/g, "");
 
-    if (guess === correctAnswer || gues === correctAnswer2) {
+    if (guess === correctAnswer || guess === correctAnswer2) {
       window.location.href = "theendofanera.html";
       return;
     }
