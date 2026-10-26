@@ -131,3 +131,23 @@ if (latestGrid) {
     })
     .catch(showPlaylistPlayer);
 }
+
+// Copy buttons (Press page bios).
+//    Markup: <button data-copy="#element-id">Copy</button>
+document.querySelectorAll("[data-copy]").forEach((button) => {
+  const label = button.textContent;
+  button.addEventListener("click", async () => {
+    const source = document.querySelector(button.dataset.copy);
+    if (!source) return;
+    const text = [...source.querySelectorAll("p")]
+      .map((p) => p.textContent.replace(/\s+/g, " ").trim())
+      .join("\n\n");
+    try {
+      await navigator.clipboard.writeText(text);
+      button.textContent = "Copied";
+    } catch {
+      button.textContent = "Couldn't copy";
+    }
+    setTimeout(() => { button.textContent = label; }, 2000);
+  });
+});
