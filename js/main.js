@@ -17,14 +17,46 @@ document.querySelectorAll("[data-year]").forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
-// Placeholder signup forms (until the Kit mailing list is connected).
-document.querySelectorAll("form[data-placeholder]").forEach((form) => {
-  form.addEventListener("submit", (event) => {
+// Mailing list signup (Kit).
+//    Sends the email to the Kit form in the form's action="" without leaving the page.
+//    Kit then emails a "confirm your subscription" link.
+//    If the background request can't get through, it falls back to a normal submit,
+//    which takes the visitor to Kit's own confirmation page, so no signup is lost.
+document.querySelectorAll("form[data-kit]").forEach((form) => {
+  const status = form.closest(".signup")?.querySelector(".form-status");
+  const button = form.querySelector('[type="submit"]');
+  const setStatus = (message, isError = false) => {
+    if (!status) return;
+    status.textContent = message;
+    status.classList.toggle("is-error", isError);
+  };
+
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const status = form.closest(".signup")?.querySelector(".form-status");
-    if (status) {
-      status.textContent =
-        "The mailing list is launching soon. Follow on Instagram in the meantime!";
+    button.disabled = true;
+    setStatus("Signing you up\u2026");
+
+    let res;
+    try {
+      res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+    } catch {
+      form.submit(); // couldn't reach Kit in the background: submit the normal way
+      return;
+    }
+
+    const data = await res.json().catch(() => null);
+    button.disabled = false;
+
+    if (res.ok && (!data || data.status !== "failed")) {
+      form.reset();
+      setStatus("Almost done! Check your inbox to confirm your subscription.");
+    } else {
+      const reason = data?.errors?.messages?.[0];
+      setStatus(reason || "That didn't go through. Please check your email address and try again.", true);
     }
   });
 });
