@@ -373,6 +373,8 @@ body { padding-top: var(--header-space); }
 .section-head h2 { margin-top: 8px; }
 
 .text-link {
+  display: inline-block;
+  padding-block: 4px; /* bigger tap area on phones */
   font-family: var(--font-display);
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -837,6 +839,8 @@ body { padding-top: var(--header-space); }
   padding-top: 16px;
 }
 .download-links a {
+  display: inline-block;
+  padding-block: 4px;
   font-family: var(--font-display);
   font-size: 0.9rem;
   font-weight: 600;
@@ -855,6 +859,12 @@ body { padding-top: var(--header-space); }
   gap: 24px;
 }
 .press-contact p { margin-top: 8px; color: var(--color-text-muted); }
+.press-contact .btn { /* an email address reads better in normal case, and must fit tiny phones */
+  max-width: 100%;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  overflow-wrap: anywhere;
+}
 
 
 /* ---------- CONTACT PAGE ---------- */
@@ -939,6 +949,8 @@ body { padding-top: var(--header-space); }
 .contact-block p { margin-bottom: 8px; font-size: 0.95rem; color: var(--color-text-muted); }
 .contact-block .social-links { margin-left: -10px; }
 .contact-email {
+  display: inline-block;
+  padding-block: 4px;
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 600;
@@ -954,3 +966,8 @@ body { padding-top: var(--header-space); }
 @media (max-width: 560px) {
   .form-row { grid-template-columns: 1fr; }
 }
+
+
+/* ---------- 404 PAGE ---------- */
+.notfound-lead { font-size: 1.2rem; }
+.notfound-hint { margin-top: 40px; color: var(--color-text-muted); }

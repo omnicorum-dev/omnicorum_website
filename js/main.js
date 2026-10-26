@@ -53,7 +53,7 @@ document.querySelectorAll("form[data-kit]").forEach((form) => {
 
     if (res.ok && (!data || data.status !== "failed")) {
       form.reset();
-      setStatus("Almost done! Check your inbox to confirm your subscription.");
+      setStatus("Almost done! Check your inbox (or spam folder) to confirm your subscription.");
     } else {
       const reason = data?.errors?.messages?.[0];
       setStatus(reason || "That didn't go through. Please check your email address and try again.", true);
