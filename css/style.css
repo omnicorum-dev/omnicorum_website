@@ -519,8 +519,27 @@ h3 { font-size: 1.25rem; }
   .about { grid-template-columns: 1fr; }
 }
 
-/* ---------- PAGE TITLE (used on inner pages) ---------- */
-.page-head { padding-block: clamp(48px, 7vw, 88px) 0; }
+/* ---------- PAGE TITLE BANNER (top of inner pages) ----------
+   Reuses the hero's background art (.hero-bg), cropped to a short strip. */
+.page-head {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(220px, 30vw, 360px);
+  padding-block: 48px clamp(24px, 4vw, 40px);
+}
+.page-head .hero-bg img { object-position: center 35%; }
+.page-head .hero-bg::after {
+  background:
+    linear-gradient(to top, var(--color-bg) 0%, transparent 70%),
+    color-mix(in srgb, var(--color-bg) 35%, transparent);
+}
+.page-head h1 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+}
 .page-head + .section { padding-top: clamp(32px, 5vw, 56px); }
 
 
