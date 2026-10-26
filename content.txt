@@ -1,0 +1,23 @@
+Omnicorum (Nico Russo)
+21 years old.
+Raised in Connecticut USA, going to school at the University of Miami in Florida.
+Makes heavy yet melodiccally driven bass music (dubstep, trap, colour bass, house)
+Got started doing video game remixes in LMMS (Linux Multi-Media Software), moved to
+FL Studio and started creating original music, then moved to Ableton Live.
+Influenced by artists like Space Laces, Virtual Riot, Skrillex, Sharks, and more.
+Highlights: The End of an Era ARG. modus Superluminal Remixed contest winner, remixed the song Superluminal by modus.
+public email address: contact@omnicorum.com
+video to feature: end of an era preview: https://youtu.be/kpYg8Wcfnb4?si=6OZ1L4ByE0GSXxOF
+Releases:
+2026 - End of an Era spotify: https://open.spotify.com/album/1AvZVSCUreHZGR9bA5VFnS
+March 2024 - Digitalis spotify: https://open.spotify.com/album/2qBx7l8eB3cP2qWOpH4Oke
+Featured on:
+Sept 2024 - Coconut Mist (on All Nighter, Vol. 9): https://open.spotify.com/track/47E7T05Lxsj3cpY8xOWMIU?si=55137631d9f641c2
+2023 - Superluminal - Omnicorum Remixed (released on Superluminal Remixed): https://open.spotify.com/track/3T9txTq4c4WjNpsu0jVU0i?si=90fad341db324693
+Feb 2024 - Paradises (released on Mothership Vol. 2): https://open.spotify.com/track/0MSgwAeuPnDWNNmVkgIHK2?si=751b03d470264f0c
+Nov 2024 - Hyper Thug Market (released on Exobolt Worlds Vol. 2): https://open.spotify.com/album/4dGV26XdoDvem1rfI2rs1u?si=ChNFEIdvTWOTv_04hLV1VQ
+Other places music lives:
+Apple music: https://music.apple.com/us/artist/omnicorum/1516042133
+Soundcloud: https://soundcloud.com/omnicorum
+Amazon Music: https://music.amazon.com/artists/B089DYJNCC
+Pushing the repo automatically publishes the website through cloudflare.

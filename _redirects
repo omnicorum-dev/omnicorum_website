@@ -1,0 +1,18 @@
+# Old ARG addresses -> the ARG's new home in /arg/ (moved Oct 2026)
+/heard.html                /arg/heard.html                301
+/heard                     /arg/heard                     301
+/read.html                 /arg/read.html                 301
+/read                      /arg/read                      301
+/saw.html                  /arg/saw.html                  301
+/saw                       /arg/saw                       301
+/theendofanera.html        /arg/theendofanera.html        301
+/theendofanera             /arg/theendofanera             301
+/assets/message.wav        /arg/assets/message.wav        301
+/assets/archive.txt        /arg/assets/archive.txt        301
+/assets/changed.png        /arg/assets/changed.png        301
+/assets/original.png       /arg/assets/original.png       301
+
+# TEMPORARY - until the new home page exists, send visitors to the ARG.
+# DELETE these two lines when the new index.html goes live, or they will hide it.
+/                          /arg/                          302
+/index.html                /arg/                          302
