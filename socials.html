@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Socials | Omnicorum</title>
+  <meta name="description" content="Watch Omnicorum on YouTube and follow on Instagram, TikTok, Spotify and Bandcamp.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= BANNER (same on every page) ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <ul class="social-links header-socials">
+        <li><a href="https://www.instagram.com/omnicorum" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#instagram"></use></svg></a></li>
+        <li><a href="https://www.tiktok.com/@omnicorum" target="_blank" rel="noopener" aria-label="TikTok"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#tiktok"></use></svg></a></li>
+        <li><a href="https://www.youtube.com/@omnicorum" target="_blank" rel="noopener" aria-label="YouTube"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#youtube"></use></svg></a></li>
+        <li><a href="https://open.spotify.com/artist/0wldjAyeuhWqBZ5R2UJt0f" target="_blank" rel="noopener" aria-label="Spotify"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#spotify"></use></svg></a></li>
+        <li><a href="https://omnicorum.bandcamp.com" target="_blank" rel="noopener" aria-label="Bandcamp"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#bandcamp"></use></svg></a></li>
+      </ul>
+
+      <a class="logo" href="index.html">
+        <img src="assets/brand/OMNI%20Full%20Name%20Logo.svg" alt="Omnicorum, home" width="1843" height="798">
+      </a>
+
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="socials.html" aria-current="page">Socials</a></li>
+          <li><a href="press.html">Press</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- =============== END BANNER =============== -->
+
+  <main id="main">
+
+    <!-- ===== PAGE TITLE BANNER ===== -->
+    <div class="page-head">
+      <div class="hero-bg" aria-hidden="true">
+        <img
+          src="assets/releases/the-end-of-an-era/banner-1200.jpg"
+          srcset="assets/releases/the-end-of-an-era/banner-1200.jpg 1200w,
+                  assets/releases/the-end-of-an-era/banner-2400.jpg 2400w"
+          sizes="100vw" alt="" fetchpriority="high">
+      </div>
+      <div class="container">
+        <h1>Socials</h1>
+      </div>
+    </div>
+
+    <!-- ===== YOUTUBE: latest uploads (updates automatically) ===== -->
+    <section class="section" aria-labelledby="youtube-title">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <h2 id="youtube-title">YouTube</h2>
+          <a class="btn btn--outline" href="https://www.youtube.com/@omnicorum?sub_confirmation=1" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#youtube"></use></svg>
+            Subscribe
+          </a>
+        </div>
+
+        <!-- Filled with the 4 newest uploads by js/main.js (data from functions/api/latest-videos.js).
+             If that can't load, main.js swaps in the uploads playlist player ("UU..." = channel uploads). -->
+        <ul class="video-grid" data-latest-videos data-playlist="UUO51eYgFVtsaxpWaUeAgHew" aria-busy="true">
+          <li class="video-item"><div class="video"></div></li>
+          <li class="video-item"><div class="video"></div></li>
+          <li class="video-item"><div class="video"></div></li>
+          <li class="video-item"><div class="video"></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== FOLLOW ===== -->
+    <section class="section" aria-labelledby="follow-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="follow-title">Follow</h2>
+        </div>
+
+        <ul class="follow-grid">
+          <li>
+            <a class="follow-card" href="https://www.instagram.com/omnicorum" target="_blank" rel="noopener">
+              <svg class="icon follow-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#instagram"></use></svg>
+              <span class="follow-name">Instagram</span>
+              <span class="follow-handle">@omnicorum</span>
+              <span class="follow-desc">Photos, clips and announcements.</span>
+            </a>
+          </li>
+          <li>
+            <a class="follow-card" href="https://www.tiktok.com/@omnicorum" target="_blank" rel="noopener">
+              <svg class="icon follow-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#tiktok"></use></svg>
+              <span class="follow-name">TikTok</span>
+              <span class="follow-handle">@omnicorum</span>
+              <span class="follow-desc">Short-form clips and previews.</span>
+            </a>
+          </li>
+          <li>
+            <a class="follow-card" href="https://open.spotify.com/artist/0wldjAyeuhWqBZ5R2UJt0f" target="_blank" rel="noopener">
+              <svg class="icon follow-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#spotify"></use></svg>
+              <span class="follow-name">Spotify</span>
+              <span class="follow-handle">Omnicorum</span>
+              <span class="follow-desc">Stream every release.</span>
+            </a>
+          </li>
+          <li>
+            <a class="follow-card" href="https://omnicorum.bandcamp.com" target="_blank" rel="noopener">
+              <svg class="icon follow-icon" aria-hidden="true"><use href="assets/icons/sprite.svg#bandcamp"></use></svg>
+              <span class="follow-name">Bandcamp</span>
+              <span class="follow-handle">omnicorum.bandcamp.com</span>
+              <span class="follow-desc">Buy and download releases.</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER (same on every page) ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="signup">
+          <h2>Get new music first</h2>
+          <p>Release news, previews and the occasional secret.</p>
+          <form class="signup-form" data-placeholder>
+            <label class="visually-hidden" for="footer-email">Email address</label>
+            <input id="footer-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+            <button class="btn" type="submit">Sign up</button>
+          </form>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="footer-links">
+          <ul class="social-links">
+            <li><a href="https://www.instagram.com/omnicorum" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#instagram"></use></svg></a></li>
+            <li><a href="https://www.tiktok.com/@omnicorum" target="_blank" rel="noopener" aria-label="TikTok"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#tiktok"></use></svg></a></li>
+            <li><a href="https://www.youtube.com/@omnicorum" target="_blank" rel="noopener" aria-label="YouTube"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#youtube"></use></svg></a></li>
+            <li><a href="https://open.spotify.com/artist/0wldjAyeuhWqBZ5R2UJt0f" target="_blank" rel="noopener" aria-label="Spotify"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#spotify"></use></svg></a></li>
+            <li><a href="https://omnicorum.bandcamp.com" target="_blank" rel="noopener" aria-label="Bandcamp"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#bandcamp"></use></svg></a></li>
+          </ul>
+          <a class="footer-email" href="mailto:contact@omnicorum.com">contact@omnicorum.com</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> Omnicorum</p>
+        <a href="arg/">E.I.M. Archive</a>
+      </div>
+    </div>
+  </footer>
+  <!-- =============== END FOOTER =============== -->
+</body>
+</html>

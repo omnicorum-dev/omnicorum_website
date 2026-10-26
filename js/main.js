@@ -32,7 +32,7 @@ document.querySelectorAll("form[data-placeholder]").forEach((form) => {
 // Click-to-load YouTube videos.
 //    Markup: <div class="video" data-youtube="VIDEO_ID" data-title="Video title"></div>
 //    Shows a thumbnail + play button; the real player only loads on click.
-document.querySelectorAll(".video[data-youtube]").forEach((box) => {
+function setupVideo(box) {
   const id = box.dataset.youtube;
   const title = box.dataset.title || "YouTube video";
 
@@ -72,4 +72,62 @@ document.querySelectorAll(".video[data-youtube]").forEach((box) => {
   });
 
   box.replaceChildren(button);
-});
+}
+
+document.querySelectorAll(".video[data-youtube]").forEach(setupVideo);
+
+// Latest YouTube uploads grid (Socials page).
+//    Asks /api/latest-videos (functions/api/latest-videos.js on Cloudflare) for the newest videos.
+//    If that isn't available — e.g. testing locally — it shows the uploads playlist player instead.
+const latestGrid = document.querySelector("[data-latest-videos]");
+
+if (latestGrid) {
+  const showPlaylistPlayer = () => {
+    const box = document.createElement("div");
+    box.className = "video";
+    const iframe = document.createElement("iframe");
+    iframe.src = `https://www.youtube-nocookie.com/embed/videoseries?list=${latestGrid.dataset.playlist}&rel=0`;
+    iframe.title = "Latest uploads on YouTube";
+    iframe.allow =
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    box.append(iframe);
+    latestGrid.replaceWith(box);
+  };
+
+  const formatDate = (iso) =>
+    new Date(iso).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+
+  fetch("/api/latest-videos")
+    .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
+    .then(({ videos }) => {
+      if (!videos || videos.length === 0) throw new Error("No videos returned");
+
+      const items = videos.map((video) => {
+        const item = document.createElement("li");
+        item.className = "video-item";
+
+        const box = document.createElement("div");
+        box.className = "video";
+        box.dataset.youtube = video.id;
+        box.dataset.title = video.title;
+
+        const title = document.createElement("h3");
+        title.className = "video-title";
+        title.textContent = video.title;
+
+        const date = document.createElement("p");
+        date.className = "video-date";
+        date.textContent = video.published ? formatDate(video.published) : "";
+
+        item.append(box, title, date);
+        setupVideo(box);
+        return item;
+      });
+
+      latestGrid.replaceChildren(...items);
+      latestGrid.removeAttribute("aria-busy");
+    })
+    .catch(showPlaylistPlayer);
+}
