@@ -17,8 +17,12 @@
 
     --max-width: 1200px;
     --gutter: clamp(16px, 4vw, 40px);
-    --header-height: 88px;
-    --header-height-scrolled: 64px;
+    --header-height: 128px;           /* banner height at the top of the page */
+    --header-height-scrolled: 64px;   /* banner height after scrolling */
+    --logo-height: 84px;              /* logo size at the top of the page */
+    --logo-height-scrolled: 40px;     /* logo size after scrolling */
+    --logo-height-mobile: 56px;       /* phones/tablets, at the top */
+    --logo-height-mobile-scrolled: 30px;
     --radius: 6px;
     --transition: 200ms ease;
 }
@@ -198,12 +202,12 @@ h3 { font-size: 1.25rem; }
 
 .logo { justify-self: center; }
 .logo img {
-  height: 56px;
+  height: var(--logo-height);
   width: auto;
   filter: var(--logo-filter);
   transition: height var(--transition);
 }
-.is-scrolled .logo img { height: 40px; }
+.is-scrolled .logo img { height: var(--logo-height-scrolled); }
 
 .site-nav { justify-self: end; }
 .site-nav ul {
@@ -232,7 +236,8 @@ h3 { font-size: 1.25rem; }
 }
 
 /* Tablets & phones: logo on top, links underneath, social icons live in the footer */
-@media (max-width: 960px) {
+
+@media (max-width: 1000px) {
   .header-inner {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -245,8 +250,8 @@ h3 { font-size: 1.25rem; }
 
   .header-socials { display: none; }
 
-  .logo img { height: 44px; }
-  .is-scrolled .logo img { height: 30px; }
+  .logo img { height: var(--logo-height-mobile); }
+  .is-scrolled .logo img { height: var(--logo-height-mobile-scrolled); }
 
   .site-nav { justify-self: center; }
   .site-nav ul { gap: 20px; }
