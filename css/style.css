@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&family=New+Rocker&display=swap");
 
 :root {
     --color-bg: #0a0a0c; /* page background */
@@ -11,6 +11,7 @@
     --color-on-accent: #0a0a0c; /* text that sits on top of accent color */
 
     --font-display: "Chakra Petch", system-ui, sans-serif; /* headings, nav, buttons */
+    --font-title:   "New Rocker", system-ui;
     --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 
     --logo-filter: invert(1);
@@ -68,8 +69,14 @@ h1, h2, h3 {
   line-height: 1.1;
   text-wrap: balance;
 }
-h1 { font-size: clamp(2.25rem, 6vw, 4rem); }
-h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+h1 { 
+    font-family: var(--font-title);
+    font-size: clamp(2.25rem, 6vw, 4rem);
+}
+h2 {
+    font-family: var(--font-title);
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+}
 h3 { font-size: 1.25rem; }
 
 ::selection { background: var(--color-accent); color: var(--color-on-accent); }
