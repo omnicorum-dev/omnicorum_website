@@ -151,3 +151,56 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
     setTimeout(() => { button.textContent = label; }, 2000);
   });
 });
+
+// Contact form.
+//    No Formspree URL yet: opens the visitor's email app with the message filled in.
+//    With data-formspree="https://formspree.io/f/..." set: sends it in the background instead.
+//    Link to contact.html?type=press (or booking / collab / general) to preselect the dropdown.
+const contactForm = document.querySelector("form[data-contact]");
+
+if (contactForm) {
+  const status = contactForm.querySelector(".form-status");
+  const typeSelect = contactForm.querySelector('[name="type"]');
+  const submitButton = contactForm.querySelector('[type="submit"]');
+  const setStatus = (message, isError = false) => {
+    status.textContent = message;
+    status.classList.toggle("is-error", isError);
+  };
+
+  const preset = new URLSearchParams(window.location.search).get("type");
+  if (preset && [...typeSelect.options].some((option) => option.value === preset)) {
+    typeSelect.value = preset;
+  }
+
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const data = new FormData(contactForm);
+    if (data.get("_gotcha")) return; // spam bot filled the hidden field
+
+    const email = contactForm.dataset.email;
+    const subject = `${typeSelect.selectedOptions[0].textContent} inquiry from ${data.get("name")}`;
+    const endpoint = contactForm.dataset.formspree;
+
+    if (!endpoint) {
+      const body = `${data.get("message")}\n\n${data.get("name")}\n${data.get("email")}`;
+      window.location.href =
+        `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      setStatus(`Your email app should open with the message ready to send. If it doesn't, email ${email} directly.`);
+      return;
+    }
+
+    data.set("_subject", subject);
+    submitButton.disabled = true;
+    setStatus("Sending\u2026");
+    try {
+      const res = await fetch(endpoint, { method: "POST", body: data, headers: { Accept: "application/json" } });
+      if (!res.ok) throw new Error(`Formspree returned ${res.status}`);
+      contactForm.reset();
+      setStatus("Thanks, your message was sent.");
+    } catch {
+      setStatus(`Something went wrong sending your message. Please email ${email} instead.`, true);
+    } finally {
+      submitButton.disabled = false;
+    }
+  });
+}
