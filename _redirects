@@ -11,8 +11,3 @@
 /assets/archive.txt        /arg/assets/archive.txt        301
 /assets/changed.png        /arg/assets/changed.png        301
 /assets/original.png       /arg/assets/original.png       301
-
-# TEMPORARY - until the new home page exists, send visitors to the ARG.
-# DELETE these two lines when the new index.html goes live, or they will hide it.
-/                          /arg/                          302
-/index.html                /arg/                          302
