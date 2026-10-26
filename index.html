@@ -41,17 +41,78 @@
   </header>
   <!-- =============== END BANNER =============== -->
 
-  <main id="main">
-    <!-- TEMPORARY: replaced in Step 2 -->
-    <section class="container" style="padding-block: 96px; min-height: 150vh;">
-      <p class="eyebrow">Step 1 test</p>
-      <h1>Banner &amp; footer check</h1>
-      <p style="margin-top: 16px; color: var(--color-text-muted);">Scroll down to watch the banner shrink.</p>
-      <p style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
-        <a class="btn" href="#">Primary button</a>
-        <a class="btn btn--outline" href="#">Outline button</a>
-      </p>
+    <main id="main">
+
+    <!-- ===== HERO: latest release ===== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true">
+        <img
+          src="assets/releases/the-end-of-an-era/banner-1200.jpg"
+          srcset="assets/releases/the-end-of-an-era/banner-1200.jpg 1200w,
+                  assets/releases/the-end-of-an-era/banner-2400.jpg 2400w"
+          sizes="100vw" alt="" fetchpriority="high">
+      </div>
+
+      <div class="container hero-inner">
+        <img class="hero-cover" src="assets/releases/the-end-of-an-era/cover-800.jpg"
+             alt="The End of an Era EP cover art" width="800" height="800" fetchpriority="high">
+
+        <div class="hero-text">
+          <h1 id="hero-title">The End of an Era</h1>
+          <p class="hero-meta">New EP · Out now on Neoluminum</p>
+
+          <div class="hero-actions">
+            <a class="btn" href="https://open.spotify.com/album/1AvZVSCUreHZGR9bA5VFnS" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#spotify"></use></svg>
+              Listen on Spotify
+            </a>
+            <a class="btn btn--outline" href="https://omnicorum.bandcamp.com/album/the-end-of-an-era" target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#bandcamp"></use></svg>
+              Get it on Bandcamp
+            </a>
+          </div>
+
+          <p class="hero-also">
+            Also on
+            <a href="https://music.apple.com/us/artist/omnicorum/1516042133" target="_blank" rel="noopener">Apple Music</a>,
+            <a href="https://music.amazon.com/artists/B089DYJNCC" target="_blank" rel="noopener">Amazon Music</a> and
+            <a href="https://soundcloud.com/omnicorum" target="_blank" rel="noopener">SoundCloud</a>
+          </p>
+        </div>
+      </div>
     </section>
+
+    <!-- ===== FEATURED VIDEO ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>The End of an Era: Preview</h2>
+        </div>
+        <div class="video" data-youtube="kpYg8Wcfnb4" data-title="Omnicorum - The End of an Era (Preview)">
+          <a class="video-fallback" href="https://youtu.be/kpYg8Wcfnb4" target="_blank" rel="noopener">Watch on YouTube</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SHORT BIO ===== -->
+    <section class="section" id="about">
+      <div class="container about">
+        <div>
+          <h2>About</h2>
+        </div>
+        <div class="about-text">
+          <p>
+            Omnicorum is the bass music project of Nico Russo, blending heavy sound design with melodic
+            hooks across dubstep, trap, colour bass and house. Raised in Connecticut and now studying
+            Music Engineering Technology at the University of Miami's Frost School of Music, he won
+            modus's <em>Superluminal</em> remix contest and released <em>The End of an Era</em> EP on
+            Neoluminum in 2026, launched alongside an alternate reality game.
+          </p>
+          <p><a class="text-link" href="press.html">Full bio &amp; press kit &rarr;</a></p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ================= FOOTER (same on every page) ================= -->
